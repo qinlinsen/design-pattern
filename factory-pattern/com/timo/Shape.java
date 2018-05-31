@@ -5,5 +5,8 @@ package com.timo;
  * @author 秦林森
  */
 public interface Shape {
+    /**
+     * define a common method ！
+     */
     void draw();
 }

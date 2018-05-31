@@ -5,6 +5,9 @@ package com.timo;
  * @author qinlinsen
  */
 public class ShapeFactory {
+    private static final String CIRCLE = "circle";
+    private static final String RECTANGLE = "rectangle";
+    private static final String SQUARE = "square";
     /**
      * 得到形状的一个工厂方法：
      * @param shapeName  the name of shape like circle ,rectangle, triangle ...
@@ -14,13 +17,13 @@ public class ShapeFactory {
         if(shapeName==null){
             return  null;
         }
-        if("circle".equalsIgnoreCase(shapeName)){
+        if(CIRCLE.equalsIgnoreCase(shapeName)){
             return new Circle();
         }
-        if("rectangle".equalsIgnoreCase(shapeName)){
+        if(RECTANGLE.equalsIgnoreCase(shapeName)){
             return new Rectangle();
         }
-        if("square".equalsIgnoreCase(shapeName)){
+        if(SQUARE.equalsIgnoreCase(shapeName)){
             return new Square();
         }
         return null;
