@@ -25,7 +25,10 @@ public class HanXin implements ConquerWorldPerson {
 
     @Override
     public void ambition() {
-        //代理的核心代码
+        /**
+         * 代理的核心代码，conquerWorldPerson 在实例化韩信时（用的是无参构造），已经被刘邦附体，
+         * 所以
+         */
         conquerWorldPerson.ambition();
     }
 }
