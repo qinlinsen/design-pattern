@@ -8,7 +8,7 @@ import java.util.List;
  * @since 2018/9/29
  */
 public class Broker {
-    private List<Order> orderList = new ArrayList<Order>();
+    private List<Order> orderList = new ArrayList<>();
 
     public void takeOrder(Order order){
         orderList.add(order);
