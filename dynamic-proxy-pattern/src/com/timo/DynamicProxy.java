@@ -19,14 +19,15 @@ public class DynamicProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("在代理真实对象前可以做自己的操作，即动态代理自己做的事情");
-        System.out.println("method="+method);
+      /*  System.out.println("在代理真实对象前可以做自己的操作，即动态代理自己做的事情");
+        System.out.println("method="+method);*/
         /**
          * 动态代理对象调用被代理类的方法时，会自动调用代理对象关联的handler对象的invoke方法
          */
-        method.invoke(subject,args);
+        Object obj = method.invoke(subject, args);
+
         //在代理真实对象后也可以做自己的事情
-        System.out.println("在代理真实对象后也可以做自己的事情，动态代理做的事情");
-        return null;
+//        System.out.println("在代理真实对象后也可以做自己的事情，动态代理做的事情");
+        return obj;
     }
 }
