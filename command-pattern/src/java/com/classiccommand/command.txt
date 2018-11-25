@@ -1,0 +1,2 @@
+经典的命令模式有4个角色分别是：
+command(命令)，concert command (具体命令) , receiver(命令的接受者)，invoker(命令的调用者)

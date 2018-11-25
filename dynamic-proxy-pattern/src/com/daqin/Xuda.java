@@ -3,6 +3,7 @@ package com.daqin;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**定义动态代理类，动态代理类必须要实现java的接口，InvocationHandler
  * @author qinlinsen
@@ -18,7 +19,11 @@ public class Xuda implements InvocationHandler {
     public Xuda(Careerism careerism) {
         this.careerism = careerism;
     }
-
+    public static Careerism newInstance(Careerism careerism){
+        InvocationHandler handler = new Xuda(careerism);
+        Careerism xuda= (Careerism)Proxy.newProxyInstance(Xuda.class.getClassLoader(),new Class[]{Careerism.class},handler);
+        return xuda;
+    }
     /**
      * 用proxy对象调用method方法，这个method方法的参数是args.
      * @param proxy
