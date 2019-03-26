@@ -1,0 +1,26 @@
+package com.qls;
+
+/**
+ * @author Abraham Qin
+ * @since 2019/3/25
+ */
+public class Originator {
+    private String state;
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Memento createMemento(){
+        return new Memento(state);
+    }
+
+    public void restoreMemento(Memento memento){
+        this.setState(memento.getState());
+        System.out.println(this.getClass());
+    }
+}
